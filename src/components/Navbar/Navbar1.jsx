@@ -1,15 +1,25 @@
+import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import {FaCartPlus } from 'react-icons/fa';
-import logo from '../img/logo.jpg';
+import logo from '../../img/logo.jpg';
+import { CardWidget } from '../CardWidget/CardWidget';
+import NavbarItem from './NavbarItem';
+
 
 
 
 
 const Navbar1 = () => {
+
+  const [stateCar, setStateCar] = useState(false);
+
+  const mostrarCarrito = () => {
+    setStateCar(!stateCar)
+  }
+
   return (
     <div>
 <Navbar bg="light" expand="lg">
@@ -22,9 +32,9 @@ const Navbar1 = () => {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link href="#action1">Nosotros</Nav.Link>
-            <Nav.Link href="#action2">Servicios</Nav.Link>
-            <Nav.Link href="#action2">Servicios</Nav.Link>
+            <NavbarItem item= "Nosotros"/>
+            <NavbarItem item= "Servicios"/>
+            <NavbarItem item= "Contacto"/>
           </Nav>
           <Form className="d-flex position-absolute start-50">
             <Form.Control
@@ -35,7 +45,8 @@ const Navbar1 = () => {
             />
             <Button variant="outline-success">Search</Button>
           </Form>
-          <Button variant="outline-success"><FaCartPlus/></Button>
+          <Button variant="outline-success" onClick={mostrarCarrito}><CardWidget/></Button>
+          <h1>{stateCar ? "1" : ""}</h1>
         </Navbar.Collapse>
       </Container>
     </Navbar>

@@ -1,8 +1,8 @@
 import React from 'react'
 
-const ItemListContainer = () => {
+const ItemListContainer = (props) => {
   return (
-    <h1 className='text-success text-center border border-success'>Greeting</h1>
+    <h1 className='text-success text-center border border-success'>{props.greeting}</h1>
   )
 }
 

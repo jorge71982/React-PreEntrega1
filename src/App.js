@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="App">
       <Conteiner>
-        <ItemListContainer/>
+        <ItemListContainer greeting="Hola"/>
       </Conteiner>
     </div>
   );

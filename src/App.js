@@ -1,7 +1,7 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Conteiner from './components/layout/Conteiner';
-import ItemListContainer from './components/itemListContainer/ItemListContainer';
+
+import Rutas from './routes/Rutas';
 
 
 
@@ -10,9 +10,7 @@ import ItemListContainer from './components/itemListContainer/ItemListContainer'
 function App() {
   return (
     <div className="App">
-      <Conteiner>
-        <ItemListContainer greeting="Hola"/>
-      </Conteiner>
+      <Rutas/>
     </div>
   );
 }

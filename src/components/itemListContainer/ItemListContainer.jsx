@@ -1,9 +1,24 @@
-import React from 'react'
+import React from "react";
+import Card from "../Card/CardItems";
+import data from "../../data.json";
 
 const ItemListContainer = (props) => {
-  return (
-    <h1 className='text-success text-center border border-success'>{props.greeting}</h1>
-  )
-}
+  const dataArray = Object.values(data);
 
-export default ItemListContainer
+  return (
+    <div className="cardItem">
+      {dataArray.map((articulo, index) => (
+        <Card
+          key={index}
+          titulo={articulo.marca}
+          precio={articulo.precio}
+          descripcion={articulo.descripcion}
+          stock={articulo.stock}
+          imagen={articulo.img}          
+        />
+      ))}
+    </div>
+  );
+};
+
+export default ItemListContainer;

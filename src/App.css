@@ -6,3 +6,15 @@
   width: 150px;
   height: 50px;
 }
+
+.cardItem {
+  border-radius: 20px;
+  box-shadow: 0 35px 88px rgba(0,0,0,0.15);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  grid-gap: 20px;
+}

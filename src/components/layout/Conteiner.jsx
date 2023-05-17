@@ -1,11 +1,14 @@
 import React, { Fragment } from 'react'
-import Navbar1 from '../Navbar/Navbar1'
+import Contador from '../Contador/Contador'
+import ItemListContainer from '../itemListContainer/ItemListContainer'
+
 
 const Conteiner = (props) => {
   return (
     <Fragment>
-        <Navbar1/>
-        {props.children}
+        <ItemListContainer/>
+        <Contador initialValue = {5}/>
+        <Contador/>
     </Fragment>
   )
 }

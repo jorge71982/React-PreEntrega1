@@ -18,3 +18,8 @@
   justify-content: space-around;
   grid-gap: 20px;
 }
+
+.botonesCard {
+  display: flex;
+  justify-content: space-evenly;
+}

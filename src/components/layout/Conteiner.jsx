@@ -3,7 +3,7 @@ import Contador from '../Contador/Contador'
 import ItemListContainer from '../itemListContainer/ItemListContainer'
 
 
-const Conteiner = (props) => {
+const Conteiner = () => {
   return (
     <Fragment>
         <ItemListContainer/>

@@ -2,7 +2,7 @@ import React from "react";
 import Card from "../Card/CardItems";
 import data from "../../data.json";
 
-const ItemListContainer = (props) => {
+const ItemListContainer = () => {
   const dataArray = Object.values(data);
 
   return (

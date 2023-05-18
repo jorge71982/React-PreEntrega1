@@ -1,8 +1,11 @@
 import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
+import {useNavigate } from "react-router-dom";
+import { Button } from "react-bootstrap";
 
 const CardItems = (props) => {
   const { titulo, descripcion, imagen, precio, stock } = props;
+  const navigate = useNavigate()
 
   return (
     <Card style={{ width: "15rem" }}>
@@ -12,12 +15,17 @@ const CardItems = (props) => {
         <Card.Text>{descripcion}</Card.Text>
       </Card.Body>
       <ListGroup className="list-group-flush">
-        <ListGroup.Item>Precio ${precio}</ListGroup.Item>
+        <ListGroup.Item>Precio ${precio} + IVA</ListGroup.Item>
         <ListGroup.Item>Cantidad disponible {stock}</ListGroup.Item>
       </ListGroup>
-      <Card.Body>
-        <Card.Link href="#">Agregar al carrito</Card.Link>
-      </Card.Body>
+      <div className="d-grid gap-2">
+      <Button variant="info" size="sm" onClick= {() => navigate('/item/${id}')}>
+      Ver mas
+      </Button>
+      <Button variant="info" size="sm">
+        Agregar al carrito
+      </Button>
+    </div>
     </Card>
   );
 };

@@ -34,17 +34,19 @@ const Contador = (props) => {
     const restar = () => setNumero (numero - 1)
     const reset = () => setNumero (0)
   return (
-    <div className='d-flex justify-content-around'>
-        <div >
-            <button disabled = {limitado} onClick={sumar}>Sumar</button>
-        </div>        
+    <div className='d-flex justify-content-center'>
         <div>
-            <button disabled={limitadoR} onClick={restar}>Restar</button>
-        </div>        
-        <div>
-            <button onClick={reset}>Reset</button>
+            <button onClick={reset} className="btn btn-sm btn-primary m-2">Reset</button>
         </div>
-        <h5 className='text-center'> El numero actual es: {numero}</h5>
+        <div>
+            <button disabled={limitadoR} onClick={restar} className="btn btn-sm btn-primary m-2">-</button>
+        </div>
+        <h5 className='text-center m-2'>{numero}</h5>
+        <div >
+            <button disabled = {limitado} onClick={sumar} className="btn btn-sm btn-primary m-2">+</button>
+        </div>        
+
+        
     </div>
   )
 }

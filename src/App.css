@@ -24,3 +24,8 @@
   justify-content: space-evenly;
 }
 
+.card-image {
+  width: 300px;
+  height: auto; 
+  margin: 0 auto; 
+}

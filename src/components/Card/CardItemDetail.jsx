@@ -5,7 +5,7 @@ import { Button } from "react-bootstrap";
 import Contador from "../Contador/Contador";
 
 const CardItemDetail = (props) => {
-  const { titulo, descripcion, imagen, precio, stock } = props;
+  const { marca, descripcion, imagen, precio, stock } = props;
   const navigate = useNavigate();
 
   return (
@@ -14,9 +14,9 @@ const CardItemDetail = (props) => {
         <div className="row justify-content-center mt-5">
           <div className="col-md-6">
             <Card>
-              <Card.Img variant="top" src={imagen} />
+              <Card.Img variant="top-center" src={imagen} className="card-image"/>
               <Card.Body>
-                <Card.Title>{titulo}</Card.Title>
+                <Card.Title>{marca}</Card.Title>
                 <Card.Text>{descripcion}</Card.Text>
                 <Card.Text>Precio: ${precio} + IVA</Card.Text>
                 <Card.Text>Cantidad disponible: {stock}</Card.Text>

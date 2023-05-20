@@ -22,7 +22,7 @@ const ItemDetail = () => {
       {loading && <h1>Cargando..</h1>}
       {!loading && item && (
         <div>
-          <CardItemDetail items={item} id = {id} />
+          <CardItemDetail key={item.id} {...item} />
         </div>
       )}
     </Fragment>

@@ -4,12 +4,12 @@ import {useNavigate } from "react-router-dom";
 import { Button } from "react-bootstrap";
 
 const Item = (props) => {
-  const { id, marca, descripcion, imagen, precio, stock } = props;
+  const { id, marca, descripcion, imagen, precio, stock , alt} = props;
   const navigate = useNavigate()
 
   return (
-    <Card style={{ width: "15rem" }}>
-      <Card.Img variant="top" src={imagen} />
+    <Card className="CardItem" style={{ width: "15rem" }}>
+      <Card.Img variant="top" src={imagen} alt= {alt}/>
       <Card.Body>
         <Card.Title>{marca}</Card.Title>
         <Card.Text>{descripcion}</Card.Text>
@@ -19,11 +19,8 @@ const Item = (props) => {
         <ListGroup.Item>Cantidad disponible {stock}</ListGroup.Item>
       </ListGroup>
       <div className="d-grid gap-2">
-      <Button variant="info" size="sm" onClick= {() => navigate(`/item/${id}`)}>
+      <Button className="fw-bold" variant="outline-success" size="sm" onClick= {() => navigate(`/item/${id}`)}>
       Ver mas
-      </Button>
-      <Button variant="info" size="sm">
-        Agregar al carrito
       </Button>
     </div>
     </Card>

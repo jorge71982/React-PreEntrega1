@@ -2,6 +2,7 @@ import React, { Fragment, useEffect, useState } from "react";
 import CardItemDetail from "../components/Card/CardItemDetail";
 import data from "../data.json";
 import { useParams } from "react-router-dom";
+import { Spinner } from "react-bootstrap";
 
 const ItemDetail = () => {
   const { id } = useParams();
@@ -19,7 +20,7 @@ const ItemDetail = () => {
 
   return (
     <Fragment>
-      {loading && <h1>Cargando..</h1>}
+      {loading && <h1 className="text-center"><Spinner animation="grow" /></h1>}
       {!loading && item && (
         <div>
           <CardItemDetail key={item.id} {...item} />

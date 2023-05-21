@@ -34,13 +34,13 @@ const Navbar1 = () => {
               navbarScroll
             >
               <Nav.Link>
-              <NavLink to= '/Nosotros'>Nosotros</NavLink>
+              <NavLink className="itemNavbar" to= '/Nosotros'>Nosotros</NavLink>
               </Nav.Link>
               <Nav.Link>
-              <NavLink to= '/Servicios'>Servicios</NavLink>
+              <NavLink className="itemNavbar" to= '/Servicios'>Servicios</NavLink>
               </Nav.Link>
               <Nav.Link>
-              <NavLink to= '/Contacto'>Contacto</NavLink>
+              <NavLink className="itemNavbar" to= '/Contacto'>Contacto</NavLink>
               </Nav.Link>
             </Nav>
             <Form className="d-flex position-absolute start-50">

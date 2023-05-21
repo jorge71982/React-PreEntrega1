@@ -5,16 +5,16 @@ import { Button } from "react-bootstrap";
 import Contador from "../Contador/Contador";
 
 const CardItemDetail = (props) => {
-  const { marca, descripcion, imagen, precio, stock } = props;
+  const { alt, marca, descripcion, imagen, precio, stock } = props;
   const navigate = useNavigate();
 
   return (
     
-      <div className="container">
-        <div className="row justify-content-center mt-5">
-          <div className="col-md-6">
-            <Card>
-              <Card.Img variant="top-center" src={imagen} className="card-image"/>
+      <div className="containerCardItenDatil">
+        <div className="row justify-content-center mt-4">
+          <div className="divCardItenDatil col-md-6">
+            <Card className="divCardItenDatil">
+              <Card.Img variant="top-center" src={imagen} alt= {alt} className="card-image"/>
               <Card.Body>
                 <Card.Title>{marca}</Card.Title>
                 <Card.Text>{descripcion}</Card.Text>
@@ -22,11 +22,11 @@ const CardItemDetail = (props) => {
                 <Card.Text>Cantidad disponible: {stock}</Card.Text>
                 <div className="d-grid gap-2">
                   <Contador />
-                  <Button variant="info" size="sm">
+                  <Button variant="outline-success" size="sm">
                     Agregar al carrito
                   </Button>
                   <Button
-                    variant="info"
+                    variant="outline-success"
                     size="sm"
                     onClick={() => navigate(`/`)}
                   >Volver</Button>

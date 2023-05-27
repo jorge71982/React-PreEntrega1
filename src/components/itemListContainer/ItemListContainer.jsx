@@ -1,18 +1,28 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Item from "../Card/Item";
-import data from "../../data.json";
+
+
+
 
 const ItemListContainer = () => {
-  const dataArray = Object.values(data);
+  
+  const [products, setProducts] = useState([]);
+
+
+  useEffect(() => {
+    fetch("/data.json")
+      .then((res) => res.json())
+      .then((res) => setProducts(res));
+  }, []);
 
   return (
     <div className="cardItem">
-      {dataArray.map((item) => (
-        <Item
-          key={item.id} {...item}
-         
-        />
+      
+        {products.map((product) => (
+        <Item key={product.id} {...product} />
       ))}
+      
+
     </div>
   );
 };

@@ -1,38 +1,37 @@
 import {useState, useEffect} from 'react'
 
-const Contador = (props) => {
+const ItemCount = () => {
 
-    const {initialValue} = props
-    const [numero, setNumero] = useState (initialValue || 0)
+    const [count, setCount] = useState (1)
     const [limitado, setLimitado] = useState(false)
     const [limitadoR, setLimitadoR] = useState(false)
 
 
     useEffect(() => {
-      if (numero >= 10) {
+      if (count >= 10) {
         setLimitado(true)
       }
     
       return () => {
         setLimitado(false)
       };
-    }, [numero])
+    }, [count])
 
     useEffect(() => {
-        if (numero <= 0) {
+        if (count <= 1) {
           setLimitadoR(true)
         }
       
         return () => {
           setLimitadoR(false)
         };
-      }, [numero])
+      }, [count])
 
 
 
-    const sumar = () => setNumero (numero + 1)
-    const restar = () => setNumero (numero - 1)
-    const reset = () => setNumero (0)
+    const sumar = () => setCount (count + 1)
+    const restar = () => setCount (count - 1)
+    const reset = () => setCount (1)
   return (
     <div className='d-flex justify-content-center'>
         <div>
@@ -41,7 +40,7 @@ const Contador = (props) => {
         <div>
             <button disabled={limitadoR} onClick={restar} className="btn btn-sm btn-primary m-2">-</button>
         </div>
-        <h5 className='text-center m-2'>{numero}</h5>
+        <h5 className='text-center m-2'>{count}</h5>
         <div >
             <button disabled = {limitado} onClick={sumar} className="btn btn-sm btn-primary m-2">+</button>
         </div>        
@@ -51,4 +50,4 @@ const Contador = (props) => {
   )
 }
 
-export default Contador
+export default ItemCount

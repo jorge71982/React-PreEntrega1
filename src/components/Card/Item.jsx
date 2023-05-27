@@ -4,8 +4,10 @@ import {useNavigate } from "react-router-dom";
 import { Button } from "react-bootstrap";
 
 const Item = (props) => {
-  const { id, marca, descripcion, imagen, precio, stock , alt} = props;
+const { id, marca, descripcion, imagen, precio, stock , alt} = props;
+
   const navigate = useNavigate()
+  
 
   return (
     <Card className="CardItem" style={{ width: "15rem" }}>

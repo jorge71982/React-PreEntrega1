@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
@@ -7,14 +6,16 @@ import Navbar from "react-bootstrap/Navbar";
 import logo from "../../img/logo.jpg";
 import { CardWidget } from "../CardWidget/CardWidget";
 import { NavLink } from "react-router-dom";
+import {useNavigate } from "react-router-dom";
+
+
 
 
 const Navbar1 = () => {
-  const [stateCar, setStateCar] = useState(false);
 
-  const mostrarCarrito = () => {
-    setStateCar(!stateCar);
-  };
+
+  const navigate = useNavigate()
+
 
   return (
     <div>
@@ -52,11 +53,10 @@ const Navbar1 = () => {
               />
               <Button variant="outline-success">Search</Button>
             </Form>
-            <Button variant="outline-success" onClick={mostrarCarrito}>
+            <Button variant="outline-success" onClick={() => navigate('/car')}>
               <CardWidget />
             </Button>
-            <h1>{stateCar ? "1" : ""}</h1>
-          </Navbar.Collapse>
+            </Navbar.Collapse>
         </Container>
       </Navbar>
     </div>
